@@ -12,7 +12,16 @@ const Tabs = TabNavigator({
     tabBarOptions: {
         showIcon: true,
         showLabel: false,
-        pressColor: "#27ae60"
+        indicatorStyle: {
+            height: 2,
+            backgroundColor: '#ffffff'
+        },
+        pressColor: "#27ae60",
+        style: {
+            backgroundColor: "#a2273c",
+            borderTopWidth: 1,
+            borderColor: "#5d1824"
+        }
     }
 });
 
