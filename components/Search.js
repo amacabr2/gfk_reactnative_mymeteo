@@ -1,11 +1,11 @@
 import React from 'react';
-import {View, TextInput, StyleSheet} from'react-native';
+import {View, TextInput, StyleSheet, Image} from'react-native';
 
 export default class Home extends React.Component {
 
     static navigationOptions = {
         tabBarIcon: () => {
-            return <Image source={require('./icons/home.png')} />
+            return <Image source={require('./icons/home.png')} style={{width: 30, height: 30}}/>
         }
     };
 
@@ -23,7 +23,7 @@ export default class Home extends React.Component {
 
     render() {
         return (
-            <View>
+            <View style={{margin: 20}}>
                 <TextInput
                     underlineColorAndroid='transparent'
                     onChangeText={(text) => this.setCity(text)}
