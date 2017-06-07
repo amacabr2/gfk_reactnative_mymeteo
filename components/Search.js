@@ -21,6 +21,7 @@ export default class Home extends React.Component {
                     underlineColorAndroid='transparent'
                     onChangeText={(text) => this.setCity(text)}
                     style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+                    value={this.state.city}
                 />
             </View>
         )

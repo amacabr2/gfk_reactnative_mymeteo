@@ -6,7 +6,7 @@ import {View} from'react-native';
 export default class App extends React.Component {
     render() {
         return (
-            <View style={{margin: 20}}>
+            <View style={{marginVertical: 40}}>
                 <Search />
             </View>
         );

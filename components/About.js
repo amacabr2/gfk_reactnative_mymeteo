@@ -3,6 +3,8 @@ import {View, Text, StyleSheet} from'react-native';
 
 export default class About extends React.Component {
 
+    // 25.36
+
     render() {
         return (
             <View style={style.view}>
