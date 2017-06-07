@@ -3,6 +3,13 @@ import {View, TextInput, StyleSheet} from'react-native';
 
 export default class Home extends React.Component {
 
+    static navigationOptions = {
+        tabBarIcon: () => {
+            return <Image source={require('./icons/home.png')} />
+        }
+    };
+
+
     constructor(props) {
         super(props);
         this.state = {

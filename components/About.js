@@ -1,9 +1,13 @@
 import React from 'react';
-import {View, Text, StyleSheet} from'react-native';
+import {View, Text, StyleSheet, Image} from'react-native';
 
 export default class About extends React.Component {
 
-    // 25.36
+    static navigationOptions = {
+      tabBarIcon: () => {
+          return <Image source={require('./icons/user.png')} />
+      }
+    };
 
     render() {
         return (
