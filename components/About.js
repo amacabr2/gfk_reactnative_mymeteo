@@ -12,7 +12,7 @@ export default class About extends React.Component {
 
     render() {
         return (
-            <View style={style.view}>
+            <View style={style.container}>
                 <Text style={style.title}>A propos de moi</Text>
                 <Text>Je suis développeur et passionné de web</Text>
                 <Text>J'aime apprendre de nouvelles technologies permettent de concevoir des sites ou des applications web et mobile.</Text>

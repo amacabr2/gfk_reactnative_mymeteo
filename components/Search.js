@@ -24,7 +24,7 @@ export default class Home extends React.Component {
 
     render() {
         return (
-            <View>
+            <View style={style.container}>
                 <TextInput
                     underlineColorAndroid='transparent'
                     onChangeText={(text) => this.setCity(text)}

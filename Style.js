@@ -1,7 +1,7 @@
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
-    view: {
+    container: {
         margin: 20
     },
     input: {
