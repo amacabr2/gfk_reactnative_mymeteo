@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, TextInput, StyleSheet, Image} from'react-native';
+import {View, TextInput, StyleSheet, Image, Button} from'react-native';
 
 export default class Home extends React.Component {
 
@@ -30,6 +30,7 @@ export default class Home extends React.Component {
                     style={{height: 40, borderColor: 'gray', borderWidth: 1}}
                     value={this.state.city}
                 />
+                <Button onPress={() => this.submit()} title="Rechercher une ville"/>
             </View>
         )
     }
