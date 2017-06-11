@@ -2,6 +2,7 @@ import React from 'react';
 import {View, TextInput, Image, Button} from'react-native';
 import style from '../Style';
 import {StackNavigator} from "react-navigation";
+import List from "./List";
 
 
 class Search extends React.Component {
@@ -12,7 +13,6 @@ class Search extends React.Component {
             return <Image source={require('./icons/home.png')} style={{width: 30, height: 30}}/>
         }
     };
-
 
     constructor(props) {
         super(props);
@@ -26,7 +26,7 @@ class Search extends React.Component {
     }
 
     submit() {
-        this.prop.navigation.navigate('Result', {city: this.state.city});
+        this.props.navigation.navigate('Result', {city: this.state.city});
     }
 
     render() {
@@ -38,18 +38,26 @@ class Search extends React.Component {
                     style={style.input}
                     value={this.state.city}
                 />
-                <Button style={style.button} color="#a2273c" onPress={() => this.submit()} title="Rechercher une ville"/>
+                <Button style={style.button} color="#a2273c" onPress={() => this.submit()}
+                        title="Rechercher une ville"/>
             </View>
         )
     }
 
 }
 
+const navigationOptions = {
+    headerStyle: style.header,
+    headerTitleStyle: style.headerTitle
+};
+
 export default StackNavigator({
     Search: {
-        screen: Search
+        screen: Search,
+        navigationOptions
     },
     Result: {
-        screen: Search
+        screen: List,
+        navigationOptions
     }
 });
