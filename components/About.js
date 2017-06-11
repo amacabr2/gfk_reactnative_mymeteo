@@ -1,5 +1,6 @@
 import React from 'react';
 import {View, Text, StyleSheet, Image} from'react-native';
+import style from '../Style';
 
 export default class About extends React.Component {
 
@@ -21,13 +22,3 @@ export default class About extends React.Component {
     }
 
 }
-
-const style = StyleSheet.create({
-    view: {
-        margin: 20
-    },
-    title: {
-        fontSize: 22,
-        marginBottom: 20
-    }
-});

@@ -1,5 +1,6 @@
 import React from 'react';
-import {View, TextInput, StyleSheet, Image, Button} from'react-native';
+import {View, TextInput, Image, Button} from'react-native';
+import style from '../Style';
 
 export default class Home extends React.Component {
 
@@ -23,14 +24,14 @@ export default class Home extends React.Component {
 
     render() {
         return (
-            <View style={{margin: 20}}>
+            <View>
                 <TextInput
                     underlineColorAndroid='transparent'
                     onChangeText={(text) => this.setCity(text)}
-                    style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+                    style={style.input}
                     value={this.state.city}
                 />
-                <Button onPress={() => this.submit()} title="Rechercher une ville"/>
+                <Button style={style.button} color="#a2273c" onPress={() => this.submit()} title="Rechercher une ville"/>
             </View>
         )
     }
