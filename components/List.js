@@ -2,6 +2,7 @@ import React from 'react';
 import {ActivityIndicator, ListView, Text, View} from "react-native";
 import style from '../Style';
 import axios from 'axios';
+import Row from "./Row";
 
 export default class List extends React.Component {
 
@@ -36,12 +37,11 @@ export default class List extends React.Component {
             );
         } else {
             const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-            console.log('REPORT', this.state.report);
             return (
                 <View>
                     <ListView
                         dataSource={ds.cloneWithRows(this.state.report.list)}
-                        renderRow={(row) => <Text>{row.temp.day}</Text>}
+                        renderRow={(row, j, k) => <Row day={row} index={parseInt(k, 10)} />}
                     />
                 </View>
             );
