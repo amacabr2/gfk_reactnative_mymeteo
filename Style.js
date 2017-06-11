@@ -27,5 +27,8 @@ export default StyleSheet.create({
     },
     headerTitle: {
         color: white
+    },
+    color: {
+        color: red
     }
 });

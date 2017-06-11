@@ -52,12 +52,12 @@ const navigationOptions = {
 };
 
 export default StackNavigator({
-    Search: {
-        screen: Search,
-        navigationOptions
-    },
     Result: {
         screen: List,
+        navigationOptions
+    },
+    Search: {
+        screen: Search,
         navigationOptions
     }
 });
