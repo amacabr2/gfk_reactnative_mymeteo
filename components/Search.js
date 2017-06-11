@@ -3,9 +3,11 @@ import {View, TextInput, Image, Button} from'react-native';
 import style from '../Style';
 import {StackNavigator} from "react-navigation";
 
+
 class Search extends React.Component {
 
     static navigationOptions = {
+        title: 'Rechercher une ville',
         tabBarIcon: () => {
             return <Image source={require('./icons/home.png')} style={{width: 30, height: 30}}/>
         }
@@ -21,6 +23,10 @@ class Search extends React.Component {
 
     setCity(city) {
         this.setState({city})
+    }
+
+    submit() {
+        this.prop.navigation.navigate('Result', {city: this.state.city});
     }
 
     render() {
