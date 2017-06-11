@@ -1,8 +1,9 @@
 import React from 'react';
 import {View, TextInput, Image, Button} from'react-native';
 import style from '../Style';
+import {StackNavigator} from "react-navigation";
 
-export default class Home extends React.Component {
+class Search extends React.Component {
 
     static navigationOptions = {
         tabBarIcon: () => {
@@ -37,3 +38,12 @@ export default class Home extends React.Component {
     }
 
 }
+
+export default StackNavigator({
+    Search: {
+        screen: Search
+    },
+    Result: {
+        screen: Search
+    }
+});
