@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, TextInput, Image, Button} from'react-native';
+import {View, TextInput, Image, Button, Keyboard} from'react-native';
 import style from '../Style';
 import {StackNavigator} from "react-navigation";
 import List from "./List";
@@ -17,7 +17,7 @@ class Search extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            city: this.props.navigation.state.params.city
+            city: ''
         }
     }
 
@@ -26,6 +26,7 @@ class Search extends React.Component {
     }
 
     submit() {
+        Keyboard.dismiss();
         this.props.navigation.navigate('Result', {city: this.state.city});
     }
 
@@ -35,6 +36,7 @@ class Search extends React.Component {
                 <TextInput
                     underlineColorAndroid='transparent'
                     onChangeText={(text) => this.setCity(text)}
+                    onSubmitEditing={(text) => this.submit(text)}
                     style={style.input}
                     value={this.state.city}
                 />
