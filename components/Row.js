@@ -65,15 +65,27 @@ export default class Row extends React.Component {
     }
 
     render() {
-        return (
-            <View style={[style.view, style.flex]}>
-                <View style={style.flex}>
-                    {this.icon()}
-                    <Text style={{marginLeft: 10}}>{this.day()} {this.date()}</Text>
+        if (this.props.index === 0) {
+            return (
+                <View style={[style.view, style.flex, style.firstView]}>
+                    <View>
+                        <Text style={{color: '#ffffff'}}>{this.day()} {this.date()}</Text>
+                        {this.icon(120)}
+                    </View>
+                    <Text style={[style.temp, {fontSize: 35}]}>{Math.round(this.props.day.temp.day)}°C</Text>
                 </View>
-                <Text style={style.temp}>{Math.round(this.props.day.temp.day)}°C</Text>
-            </View>
-        );
+            );
+        } else {
+            return (
+                <View style={[style.view, style.flex]}>
+                    <View style={style.flex}>
+                        {this.icon()}
+                        <Text style={{marginLeft: 10}}>{this.day()} {this.date()}</Text>
+                    </View>
+                    <Text style={style.temp}>{Math.round(this.props.day.temp.day)}°C</Text>
+                </View>
+            );
+        }
     }
 
 }
@@ -98,6 +110,9 @@ const style = StyleSheet.create({
         paddingHorizontal: 20,
         paddingVertical: 10,
         justifyContent: 'space-between'
+    },
+    firstView: {
+       backgroundColor: '#e54b65'
     },
     temp: {
         color: '#ffffff',
