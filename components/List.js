@@ -1,5 +1,5 @@
 import React from 'react';
-import {ActivityIndicator, ListView, Text, View} from "react-native";
+import {ActivityIndicator, ListView, Image} from "react-native";
 import style from '../Style';
 import axios from 'axios';
 import Row from "./Row";
@@ -8,15 +8,17 @@ export default class List extends React.Component {
 
     static navigationOptions = ({navigation}) => {
         return {
-            //title: `Météo / ${navigation.state.params.city}`
+            title: `Météo / ${navigation.state.params.city}`,
+            tabBarIcon: () => {
+                return <Image source={require('./icons/home.png')} style={{width: 30, height: 30}}/>
+            }
         }
     };
 
     constructor(props) {
         super(props);
         this.state = {
-            city: 'Paris',
-            //this.props.navigation.state.params.city,
+            city: this.props.navigation.state.params.city,
             report: null
         };
         this.fetchWeather();
